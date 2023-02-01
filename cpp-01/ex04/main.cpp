@@ -1,7 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
-
 
 int main(int argc, char **argv)
 {
@@ -34,11 +32,11 @@ int main(int argc, char **argv)
 	}
 	std::string line;
 	size_t pos = 0;
-	size_t len = oldfile.length();
+	size_t len = oldWord.length();
 	while (std::getline(input, line))
 	{
 		pos = 0;
-		while ((pos = line.find(oldfile, pos)) != line.npos)
+		while ((pos = line.find(oldWord, pos)) != line.npos)
 		{
 			line.erase(pos,len);
 			line.insert(pos, newWord);
