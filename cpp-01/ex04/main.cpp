@@ -16,14 +16,14 @@ int main(int argc, char **argv)
 	std::string oldfile = argv[1];
 	std::string oldWord = argv[2];
 	std::string newWord = argv[3];
-	std::ifstream input(oldfile);
+	std::ifstream input(oldfile.c_str());
 	if(!input.is_open())
 	{
 		std::cout << "Error: file not found" << std::endl;
 		return (1);
 	}
 	std::string newfile = oldfile + ".replace";
-	std::ofstream output(newfile);
+	std::ofstream output(newfile.c_str());
 	if(!output.is_open())
 	{
 		input.close();

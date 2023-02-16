@@ -9,7 +9,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CXX = g++
 
 ${NAME}: $(OBJS)
-		$(CXX) $(CXXFLAGS) -o zombie $(OBJS)
+		$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 all : ${NAME}
 bonus :

@@ -57,11 +57,27 @@ void Harl::wrong()
 
 void	Harl::Complaint(std::string line)
 {
-	void (Harl::*func)() = &Harl::wrong;
-
-	(!line.compare("DEBUG") && (func = &Harl::debug));
-	(!line.compare("INFO") && (func = &Harl::info));
-	(!line.compare("WARNING") && (func = &Harl::warning));
-	(!line.compare("ERROR") && (func = &Harl::error));
-	(this->*func)();
+	int n = 0;
+	(!line.compare("DEBUG") && (n = 1));
+	(!line.compare("INFO") && (n = 2));
+	(!line.compare("WARNING") && (n = 3));
+	(!line.compare("ERROR") && (n = 4));
+	switch (n)
+	{
+		case 1:
+			debug();
+			break;
+		case 2:
+			info();
+			break;
+		case 3:
+			warning();
+			break;
+		case 4:
+			error();
+			break;
+		default:
+			wrong();
+			break;
+	}
 }
