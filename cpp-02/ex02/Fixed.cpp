@@ -84,13 +84,13 @@ int Fixed::toInt(void) const
 	return this->fixedPointValue >> this->fractionalBits;
 }
 
-Fixed operator-(Fixed const & rhs)
+Fixed Fixed::operator-(Fixed const & rhs)
 {
 	Fixed tmp;
 	tmp.setRawBits(-rhs.getRawBits());
 	return tmp;
 }
-Fixed	operator+(Fixed const & rhs)
+Fixed	Fixed::operator+(Fixed const & rhs)
 {
 	Fixed tmp;
 	tmp.setRawBits(tmp.getRawBits() + rhs.getRawBits());
