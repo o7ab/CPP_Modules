@@ -11,11 +11,17 @@ class Fixed
 	public:
 		Fixed();
 		Fixed(Fixed const & src);
+		Fixed(const int & src);
+		Fixed(const float & src);
 		~Fixed();
 		Fixed & operator=(Fixed const & rhs);
-		void operator<();
+		
+		float toFloat(void) const;
+		int toInt(void) const;
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
 };
+
+std::ostream & operator << (std::ostream &out, const Fixed &c);
 
 # endif
