@@ -4,7 +4,7 @@ SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CXXFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 CXX = c++
 
