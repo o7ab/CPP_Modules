@@ -21,13 +21,24 @@ ScalarConvertor & ScalarConvertor::operator=(ScalarConvertor const & rhs)
 
 void	ScalarConvertor::convert(std::string const & str)
 {
+	int i;
+	double d;
+	float f;
 	try
 	{
 		if (str == "nan" || str == "nanf" || str == "inff" || str == "inf" || str == "-inff" || str == "-inf")
 			throw std::exception();
-		int		i = std::atoi(str.c_str());
-		float	f = static_cast<float>(std::atof(str.c_str()));
-		double	d = std::atof(str.c_str());
+		if (std::isdigit(str[0])){
+			i = static_cast<int>(std::atoi(str.c_str()));
+			f = static_cast<float>(std::atof(str.c_str()));
+			d = std::atof(str.c_str());
+		}
+		else{
+			i = static_cast<int>(str[0]);
+			f = static_cast<float>(i);
+			d = static_cast<double>(i);
+		}
+
 		char	c = static_cast<char>(i);
 		std::cout << "char: ";
 		if (i < 32 || i > 126)
