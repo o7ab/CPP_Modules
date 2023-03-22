@@ -4,6 +4,7 @@
 # include <algorithm>
 # include <iostream>
 # include <vector>
+#include <exception>
 
 class Span
 {
@@ -17,6 +18,7 @@ class Span
 		void	addNumber(int n);
 		int		shortestSpan();
 		int		longestSpan();
+		void	AddRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 		class	FullArrayException : public std::exception
 		{
 			public:
