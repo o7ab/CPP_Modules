@@ -46,24 +46,5 @@ int main()
         std::cout << *itlst << std::endl;
         ++itlst;
     }
-
-    std::cout << "Stack 2: " << std::endl;
-
-    MutantStack<int> testStack;
-    testStack.push(5);
-    testStack.push(10);
-    testStack.push(520);
-    
-    MutantStack<int> testStack2(testStack);
-    MutantStack<int>::iterator itTst = testStack2.begin();
-    MutantStack<int>::iterator iteTst = testStack2.end();
-    ++itTst;
-    --itTst;
-    while (itTst != iteTst)
-    {
-        std::cout << *itTst << std::endl;
-        ++itTst;
-    }
-
     return 0;
 }

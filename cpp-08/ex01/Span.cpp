@@ -76,6 +76,11 @@ void	Span::AddRange(std::vector<int>::iterator begin, std::vector<int>::iterator
 	this->array.insert(this->array.end(), begin, end);
 }
 
+std::vector<int>::iterator Span::getbegin()
+{
+	return (this->array.begin());
+}
+
 const char *Span::NoSpanException::what() const throw()
 {
 	return ("Array is empty or has only one element");

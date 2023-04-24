@@ -19,11 +19,7 @@ class Span
 		int		shortestSpan();
 		int		longestSpan();
 		void	AddRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-		class	FullArrayException : public std::exception
-		{
-			public:
-				virtual const char *what() const throw();
-		};
+		std::vector<int>::iterator getbegin();
 		class	NoSpanException : public std::exception
 		{
 			public:
